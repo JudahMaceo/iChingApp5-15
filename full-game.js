@@ -19,10 +19,11 @@ function iChingGame() {
     //CONVERT NUMBER TO A LINE THAT IS BINARY IN NATURE IN THAT IT IS EITHER 0 OR 1
     function convertNumberToLine() {
         var tossOutcome = tossResult();
+
         if (tossOutcome % 2 === 0) {
-            return ("____   ____");
+            return ("____   ____ even ");
         } else {
-            return ("___________");
+            return ("___________ odd ");
         }
 
     }
@@ -58,6 +59,7 @@ function iChingGame() {
 
             if (i < 3) {
                 lowerHex.push("lower hex" + generateHexagramArray()[i]);
+
             } else {
                 upperHex.push("upper hex" + generateHexagramArray()[i])
             }
@@ -69,12 +71,15 @@ function iChingGame() {
         return (hex);
 
     }
-    separateLowerUpperHex();
+    console.log(separateLowerUpperHex());
 
-    function hexKeys() {
-
-    }
-
+    //     function hexKeys() {
+    //       if(convertNumberToLine() === "____   ____"){
+    //         console.log("divided lines are actually even");
+    //       }
+    //     }
+    //
+    // hexKeys();
 };
 //function close
 
