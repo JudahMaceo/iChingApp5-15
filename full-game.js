@@ -20,16 +20,24 @@ var totalNumber = 0;
   return(totalNumber);
 }
 
-console.log(tossResult());
 
-//if the number is even then
-  //the line looks like this "____   ____"
-//else the line is odd
-  //and looks like this "___________"
+function convertNumberToLine(){
+  var tossOutcome = tossResult();
+  console.log(tossOutcome);
+  console.log(tossOutcome % 2);
+  if( tossOutcome % 2 === 0 ){
+    return("____   ____");
+  }
+  else{
+    return("___________");
+  }
 
-// "____   ____"
-// "___________"
+}
+
+console.log(convertNumberToLine() );
+
 
 };
+//function close
 
 iChingGame();
