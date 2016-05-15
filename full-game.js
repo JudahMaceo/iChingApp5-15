@@ -1,11 +1,33 @@
 function iChingGame() {
+
+  //Get Upper and Lower Hexagrams
+    //within Generate Hexagram
+      //var hexArray = [
+                      // [--, -, -],
+                      // [--, -, -]
+                      // ]
+      // var hexObject = {
+// upper: ["____   ____", "___________", "___________"]
+// lower: ["____   ____", "___________", "___________"]
+// }
+//
+//
+//
+//
+//
+// upper
+// -----------
+// lower
+
+
+
+
+
+
+////////////////////////////////////////////////////
     //Generate Hexagram
     //generate six lines
     //return six lines (full hexagram)
-
-
-
-
     ////////////////////////////////////////////////////
     // Generate Line
     // The Coin Toss
@@ -39,19 +61,37 @@ function iChingGame() {
 
     }
 
-    function generateHexagram() {
+    // function generateHexagramString() {
+    //     var hexString = "";
+    //
+    //     for (var i = 1; i <= 6; i++) {
+    //         hexString += convertNumberToLine() + i +"\n";
+    //
+    //
+    //     }
+    //     return (hexString);
+    // }
+    // console.log(generateHexagramString());
 
-        var i = 1;
-        var hexString = "";
-        while (i <= 6) {
-            hexString += convertNumberToLine() + "\n";
-            i++;
+    function generateHexagramArray() {
+        var hexArray = [];
+
+        for (var i = 1; i <= 6; i++) {
+            hexArray.push(convertNumberToLine() + i);
         }
-        return (hexString);
-
+        return (hexArray);
     }
+    // console.log(generateHexagramArray());
 
-    console.log(generateHexagram());
+    function displayHexArrayCorrectly() {
+      var hexArray = generateHexagramArray();
+      var hexString = ""
+      for (var i = 5; i >= 0; i--) {
+        hexString += hexArray[i] + "\n"
+      }
+      return hexString;
+    }
+    console.log(displayHexArrayCorrectly());
 
 
 };
