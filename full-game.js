@@ -1,46 +1,11 @@
 function iChingGame() {
-
-  //Get Upper and Lower Hexagrams
-    //within Generate Hexagram
-      //var hexArray = [
-                      // [--, -, -],
-                      // [--, -, -]
-                      // ]
-      // var hexObject = {
-// upper: ["____   ____", "___________", "___________"]
-// lower: ["____   ____", "___________", "___________"]
-// }
-//
-//
-//
-//
-//
-// upper
-// -----------
-// lower
-
-
-
-
-
-
-////////////////////////////////////////////////////
-    //Generate Hexagram
-    //generate six lines
-    //return six lines (full hexagram)
-    ////////////////////////////////////////////////////
-    // Generate Line
-    // The Coin Toss
-    // Toss three coins
-    // each coin tossed has value of 3 (heads) or 2 (tails)
-
-
     // flip one coin and return a value of 3 (heads) or 2 (tails)
     function flipOneCoin() {
         return Math.round(Math.random()) + 2;
     }
 
     // flip 3 coins and return a value of 6, 7, 8, 9
+
     function tossResult() {
         var totalNumber = 0;
 
@@ -51,6 +16,7 @@ function iChingGame() {
     }
 
 
+    //CONVERT NUMBER TO A LINE THAT IS BINARY IN NATURE IN THAT IT IS EITHER 0 OR 1
     function convertNumberToLine() {
         var tossOutcome = tossResult();
         if (tossOutcome % 2 === 0) {
@@ -61,17 +27,6 @@ function iChingGame() {
 
     }
 
-    // function generateHexagramString() {
-    //     var hexString = "";
-    //
-    //     for (var i = 1; i <= 6; i++) {
-    //         hexString += convertNumberToLine() + i +"\n";
-    //
-    //
-    //     }
-    //     return (hexString);
-    // }
-    // console.log(generateHexagramString());
 
     function generateHexagramArray() {
         var hexArray = [];
@@ -84,15 +39,41 @@ function iChingGame() {
     // console.log(generateHexagramArray());
 
     function displayHexArrayCorrectly() {
-      var hexArray = generateHexagramArray();
-      var hexString = ""
-      for (var i = 5; i >= 0; i--) {
-        hexString += hexArray[i] + "\n"
-      }
-      return hexString;
+        var hexArray = generateHexagramArray();
+        var hexString = ""
+        for (var i = 5; i >= 0; i--) {
+            hexString += hexArray[i] + "\n"
+        }
+        return hexString;
     }
     console.log(displayHexArrayCorrectly());
 
+
+    function separateLowerUpperHex() {
+        var lowerHex = [];
+        var upperHex = [];
+        var hex = [];
+
+        for (var i = 0; i < 6; i++) {
+
+            if (i < 3) {
+                lowerHex.push("lower hex" + generateHexagramArray()[i]);
+            } else {
+                upperHex.push("upper hex" + generateHexagramArray()[i])
+            }
+
+
+        }
+        hex.push(lowerHex);
+        hex.push(upperHex);
+        return (hex);
+
+    }
+    separateLowerUpperHex();
+
+    function hexKeys() {
+
+    }
 
 };
 //function close
