@@ -1,4 +1,12 @@
 function iChingGame(){
+//Generate Hexagram
+  //generate six lines
+    //return six lines (full hexagram)
+
+
+
+
+////////////////////////////////////////////////////
 // Generate Line
   // The Coin Toss
     // Toss three coins
@@ -23,8 +31,6 @@ var totalNumber = 0;
 
 function convertNumberToLine(){
   var tossOutcome = tossResult();
-  console.log(tossOutcome);
-  console.log(tossOutcome % 2);
   if( tossOutcome % 2 === 0 ){
     return("____   ____");
   }
@@ -34,7 +40,19 @@ function convertNumberToLine(){
 
 }
 
-console.log(convertNumberToLine() );
+function generateHexagram(){
+
+var i = 1;
+var hexString = "";
+while(i <= 6){
+  hexString+= convertNumberToLine() + "\n";
+  i++;
+}
+return(hexString);
+
+}
+
+console.log(generateHexagram());
 
 
 };
